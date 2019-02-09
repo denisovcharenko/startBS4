@@ -1,0 +1,27 @@
+.navbar-brand {
+	padding: 15px 15px;
+}
+
+.header {
+	@media screen and (min-width: 992px) {
+		padding-top: 50px;
+	}
+}
+
+.navbar-nav {
+
+	li {
+		padding-right: 70px;
+		@media (max-width: 767px) {
+			border-bottom: 2px solid $gray-light;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	a {
+		font-weight: bold;
+		font-size: $font-size-h3;
+	}
+}

@@ -1,0 +1,114 @@
+.block-inverse {
+	color: $custom-white;
+	background-color: $custom-black;
+	a {
+		color: $custom-white;
+		font-weight: normal;
+	}
+	.section-intro {
+		color: $custom-gray-light;
+	}
+
+	.icons-holder {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 40px;
+		@media (min-width: 768px) {
+			margin-bottom: 60px;
+		}
+		@media (min-width: 992px) {
+			margin-bottom: 120px;
+		}
+		a {
+			color: $brand-primary;
+		}
+	}
+
+}
+
+.error-text {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	padding: 5px 10px;
+	border-radius: $border-radius-base;
+	top: calc(100% + #{$error-text-offset});
+	left: 0;
+	background-color: $brand-danger;
+	color: $custom-white;
+	transition: .3s visibility, .3s opacity;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		transform: translateY(-100%);
+		border-width: 0 5px 5px 5px;
+		border-style: solid;
+		border-color: transparent transparent $brand-danger transparent;
+	}
+
+	@media (min-width: 768px) {
+		left: $grid-gutter-width / 2;
+	}
+}
+
+.subscribe-form {
+	padding: $grid-gutter-width 0;
+	margin: 0 -$grid-gutter-width / 2;
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+	}
+
+	> * {
+		@media screen and (min-width: 768px) {
+			padding: 0 $grid-gutter-width / 2;
+		}
+	}
+
+	.input-holder {
+		position: relative;
+		margin-bottom: 20px;
+
+		@media screen and (min-width: 768px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	.form-control {
+
+		&:invalid {
+			+ .error-text {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	.submit-holder {
+			@media screen and (max-width: 768px) {
+			flex: 0 0 auto;
+		}
+
+		.btn {
+			width: 100%;
+		}
+	}
+}
+
+.container {
+	&.narrow-container {
+		@media screen and (max-width: 992px) {
+			max-width: 800px;
+		}
+	}
+}
+
+footer {
+	.icons-holder {
+		li {
+			list-style: none;
+		}
+	}
+}
